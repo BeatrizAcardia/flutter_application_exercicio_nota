@@ -124,7 +124,7 @@ class _MeucadState extends State<Meucad> {
                 onPressed: () {
                   int crm = int.parse(crmController.text);
                   cadastro c = cadastro(nomeController.text, crm, listaformacao, permitir);
-                  mostrar();
+                  imprimirDados();
                 setState(() {});
               }, child: Text("Cadastrar")),
 
@@ -141,16 +141,17 @@ class _MeucadState extends State<Meucad> {
                 permitir = false;
 
                 setState(() {});
-              }, child: Text("Cancelar"))
+              }, child: Text("Cancelar")),
+
           ],)
         ],)),
     );
   }
 
-  void mostrar(){
-    listaCadastro.forEach((cadastro c) { 
-      print("=-=-=-=-=--=-=-=-=-=-=-=");
+  void imprimirDados(){ 
+    print("=-=-=-=-=--=-=-=-=-=-=-=");
 
+    listaCadastro.forEach((cadastro c){ 
       print("- Nome: " + c.getNome + "\n- CRM: " + c.getCrm );
 
       for (int c = 0; c < listaformacao.length; c++){
