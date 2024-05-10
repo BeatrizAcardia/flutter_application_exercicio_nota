@@ -122,8 +122,8 @@ class _MeucadState extends State<Meucad> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  int crm = int.parse(crmController.text);
-                  cadastro c = cadastro(nomeController.text, crm, listaformacao, permitir);
+                  cadastro c = cadastro(nomeController.text, crmController.text, listaformacao, permitir);
+                  listaCadastro.add(c);
                   imprimirDados();
                 setState(() {});
               }, child: Text("Cadastrar")),
@@ -150,7 +150,6 @@ class _MeucadState extends State<Meucad> {
 
   void imprimirDados(){ 
     print("=-=-=-=-=--=-=-=-=-=-=-=");
-
     listaCadastro.forEach((cadastro c){ 
       print("- Nome: " + c.getNome + "\n- CRM: " + c.getCrm );
 

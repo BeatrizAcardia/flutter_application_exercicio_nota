@@ -1,6 +1,6 @@
 class cadastro{
   String nome = " ";
-  int crm = 0;
+  String crm = " ";
   bool permitir = false;
   List<String> formacao = [];
 
